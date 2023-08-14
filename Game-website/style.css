@@ -1,0 +1,361 @@
+*{
+  margin:0;
+  
+}
+
+
+body{
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Sen', sans-serif;
+
+}
+
+.navbar{
+  width:100%;
+  height:50px;
+  background-color:black;
+  color: white;
+  text-decoration: none;
+ 
+}
+
+.menu-list-item ul li a{
+  color: #fff;
+ 
+
+}
+
+
+.navbar-container{
+ display:flex;
+ align-items:center;
+ background-color:blanchedalmond;
+ height: 100%;
+font-family: "Sen", sans-serif;
+
+}
+
+
+
+.sidebar{
+  width:50px;
+  height:100%;
+  background-color:black;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+
+}
+
+.navbar-container{
+ display:flex;
+ align-items:center;
+ background-color:rgb(17, 17, 16);
+ padding:0 50px;
+ width: 100%;
+
+
+}
+
+.logo-container{
+ flex:1;
+ display: flex;
+}
+
+.menu-container{
+ flex:6;
+
+}
+
+.profile-container{
+ flex:2;
+
+}
+
+.logo{
+ font-family: sans-serif;
+}
+
+.menu-list{
+ display: flex;
+ list-style: none;
+}
+
+.menu-list-item{
+ margin-right: 30px;
+ font-weight: bold;
+}
+
+.left-menu-icon {
+color: white;
+font-size: 20px;
+margin-bottom: 40px;
+
+}
+
+.container{
+background-color:black;
+min-height: calc(100vh-50);
+
+
+}
+
+.content-container{
+margin-left: 50px;
+
+}
+
+.featured-content{
+height: 50vh;
+
+}
+
+
+.featured-title{
+width: 200px;
+margin-left: 30px;
+margin-top: 30px;
+}
+
+.featured-desc{
+color:white;
+margin-bottom: 50px;
+margin-left: 30px;
+padding-top: 50px;
+width: 500px;
+}
+
+.featured-button{
+margin-left: 30px;
+width:80px;
+background-color: green;
+color: white;
+padding: 10px 10px;
+border-radius: 20px;
+border:none;
+font-weight:bold;
+}
+
+.movie-list-item{
+position:relative;
+}
+
+.movie-list-tittle{
+color:white
+}
+
+.movie-list-item-img{
+width:350px;
+height:200px;
+object-fit: cover;
+}
+
+.instructions{
+color:#fff
+}
+
+.movie-list-item-tittle{
+color:white;
+background-color: #333;
+padding:0 10px;
+font-size: 32px;
+font-weight: bold;
+top:10%;
+left:50px;
+position: absolute;
+opacity: 0;
+transition: 1s all ease-in-out;
+}
+
+.movie-list-iteem-desc{
+color:white;
+background-color: #333;
+padding:0 10px;
+font-size: 14px;
+width:200px;
+top:30%;
+position: absolute;
+opacity: 0;
+transition: 1s all ease-in-out;
+}
+
+
+.movie-list-item:hover .movie-list-item-tittle,
+.movie-list-item:hover .movie-list-iteem-desc,
+.movie-list-item:hover .movie-list-item-button {
+opacity: 1;
+}
+
+
+.movie-list-item-button{
+padding: 10px;
+background-color: green;
+color: white;
+border-radius: 10px;
+
+border: none;
+cursor: pointer;
+position: absolute;
+bottom:10px;
+left:50px;
+font-weight: bold;
+opacity: 0;
+}
+
+
+
+.movie-list{
+display: flex;
+align-items:center;
+height: 300px;
+
+transform: translateX(0);
+transition: all 1s ease-in-out;
+
+}
+.movie-list-item{
+margin-right: 30px;
+
+}
+
+.movie-list-item:hover {
+transform:scale(1.2);
+transition:all 1s ease-in-out;
+margin:30px;
+}
+
+
+.movie-list-item-img{
+width:270px;
+height:200px;
+object-fit:cover;
+border-radius: 20px;
+}
+
+.movie-list-wrapper{
+position: relative;
+overflow: hidden;
+}
+
+
+.arrow {
+font-size: 120px;
+position: absolute;
+top: 90px;
+right: 0;
+color: lightgray;
+opacity: 0.5;
+cursor: pointer;
+}
+
+
+
+
+.instruction{
+  width: 90%;
+  border: 15px solid green;
+  padding: 50px;
+  margin-right:20px;
+  background-color: rgb(196, 115, 11);
+ 
+  margin-top: 20px;
+
+}
+
+.instruction h1{
+  color: black;
+  text-align: center;
+font-style: italic;
+font-weight: bolder;
+}
+
+.star {
+  color: gold;
+  font-size: 24px;
+}
+
+.star-half {
+  position: relative;
+  color: gold;
+  font-size: 24px;
+  width: 0.5em;
+  overflow: hidden;
+}
+
+.review{
+  justify-content: space-between;
+  position:relative;
+  position: absolute;
+  background-color: black;
+  color: black;
+
+}
+
+ 
+.review1{
+  color:grey;
+  border: 2px solid pink;
+  width: 40%;
+  padding: 10px;
+flex-direction: left;
+margin-left: 42px;
+margin-top: 40px;
+position: absolute;
+background: #fff3f3;
+
+}
+
+ 
+.review2{
+  color:grey;
+  border: 2px solid pink;
+  width: 40%;
+  padding: 10px;
+float:right;
+margin-left: 42px;
+margin-top: 40px;
+background: #fff3f3;
+}
+
+.menu-container li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.menu-container ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+.menu-container ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: #e97911;
+  display: block;
+  margin: auto;
+  transition: 0.5;
+   color:orange
+}
+
+h2{
+  color:white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+  
+  

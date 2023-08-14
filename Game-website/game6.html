@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory Match</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Memory Match</h1>
+  <div id="game-board"></div>
+  <button onclick="resetGame()">Reset</button>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+    body{
+        background-color: aqua;
+    }
+    #game-board {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button {
+  display: block;
+  font-weight: bold;
+  margin: 20px auto;
+  width: 50px;
+  border-radius: 30px;
+  color: gray;
+}
+
+</style>
+
+<script>
+    // Game variables
+let cards = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F'];
+let flippedCards = [];
+let matchedCards = [];
+
+// Shuffle the cards
+cards = shuffle(cards);
+
+// Create the game board
+const gameBoard = document.getElementById('game-board');
+for (let i = 0; i < cards.length; i++) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.dataset.index = i;
+  card.addEventListener('click', flipCard);
+  gameBoard.appendChild(card);
+}
+
+// Flip a card
+function flipCard() {
+  if (matchedCards.includes(this.dataset.index) || flippedCards.length === 2) {
+    return;
+  }
+  this.textContent = cards[this.dataset.index];
+  flippedCards.push(this);
+  if (flippedCards.length === 2) {
+    setTimeout(checkMatch, 1000);
+  }
+}
+
+// Check if the flipped cards match
+function checkMatch() {
+  if (flippedCards[0].textContent === flippedCards[1].textContent) {
+    matchedCards.push(parseInt(flippedCards[0].dataset.index));
+    matchedCards.push(parseInt(flippedCards[1].dataset.index));
+    if (matchedCards.length === cards.length) {
+      alert('Congratulations! You won!');
+    }
+  } else {
+    flippedCards[0].textContent = '';
+    flippedCards[1].textContent = '';
+  }
+  flippedCards = [];
+}
+
+// Shuffle an array using Fisher-Yates algorithm
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Reset the game
+function resetGame() {
+  flippedCards = [];
+  matchedCards = [];
+  cards = shuffle(cards);
+  const cardElements = document.getElementsByClassName('card');
+  for (let i = 0; i < cardElements.length; i++) {
+    cardElements[i].textContent = '';
+  }
+}
+
+</script>
